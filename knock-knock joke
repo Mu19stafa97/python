@@ -1,0 +1,23 @@
+from random import shuffle
+def clean(s):
+    return ''.join([c for c in s if c not in "',.!?;\""])
+def prompt_response(prompt, responses, suggest):
+    print(prompt)
+    response = clean(input())
+    if response in (clean(responses)):
+        return True
+    else :
+        print(f"The correct response is '{suggest}'")
+        print("Try again \n")
+        return False
+responses = ["who's there?","whos there","whos there","who is there","who dere"]
+suggest = "Who's there?"
+prompt = "Knock-Knock"
+ok = prompt_response(prompt, responses, suggest)
+'''
+jokes = list()
+jokes.append(("Tank","You're welcome"))
+jokes.append(("Cows say","No! Cows say moo. Owls say hoo"))
+shuffle(jokes)
+print(ok)
+'''
