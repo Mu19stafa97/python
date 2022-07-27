@@ -1,0 +1,18 @@
+'''
+Filename:linearPrediction_MA_0.py
+Author: Mustafa Al-Tameemi
+purpose:Predicts the third number
+Revision:0
+'''
+#announce
+print("Predict the third number in sequance\n")
+#prompt a user & get a response
+firstNumber = int(input("Enter the first number: "))
+#prompt a user & get a response
+secondNumber = int(input("Enter the second number: "))
+#Subtract the first number from the second 
+result1 = secondNumber - firstNumber
+#Add the subtraction result to the second number
+result2 = secondNumber + result1
+#echo back the result
+print("The linear sequence is:" , firstNumber , secondNumber , result2)
