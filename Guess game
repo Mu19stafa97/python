@@ -1,0 +1,59 @@
+'''
+Filename:guessingGame_musta_0.py
+Author: Mustafa Al-Tameemi
+purpose:This is a guessing game that is based on an algorithm called a “binary search”. The goal is to guess a number
+        within a certain range in the fewest number of guesses. The game has two participants, one (the holder)
+        is holding a secret number selected at random. The other (the guesser) will make guesses at what the
+        number is. When the guesser makes a guess, the holder tells the guesser if the guess is correct or if the
+        secret number is higher or lower than the guess. The guesser has a limited number of guesses.
+        In this game the holder is the program.
+        The guesser is the user
+Revision:0
+'''
+#importing the random library to generate random numbers.
+import random
+#importing the math module to use logarithm 
+import math
+#announce
+print("Guess The Secret Number \n")
+#getting input and assigning it to nMax 
+nMax = int(input("Enter the maximum number in the range: "))
+#generating random number from 1 to max number specified by the user & assigning it to variable(secretNumber)
+secretNumber = random.randrange(1,nMax)
+#using logarithm to determen number of guess allowed and assigning it to nGuesses 
+nGuesses = int(math.log2(nMax)+1)
+print(f"\nTry to guess a number from 1 to {nMax} \n")
+#iterating through number of guesses allowed 
+for x in range(0,nGuesses):
+    #using if statment to control grammar correctness 
+    if (nGuesses - x) != 1:
+        #echoing back number of guesses available 
+        print(f"you have {nGuesses - x} guesses available.")
+    else :
+        print(f"you have {nGuesses - x} guess available.")
+        #prompting the user and getting a rsponse
+    guessed = int(input("Enter your guess: "))
+    #comparing if the response is less than the secret number   
+    if secretNumber > guessed :
+        #notifying the user that the number entered is less than the secret number  
+        print(f"The secret number is greater than {guessed}")
+    #comparing if the response is greater than the secret number
+    elif secretNumber < guessed :
+        #notifying the user that the number entered is greater than the secret number
+        print(f"The secret number is less than {guessed}")
+    #else the entered number is correct 
+    else :
+        #controlling grammar correctness by comparing number of tries to one 
+        if (x+1) != 1:
+            #notifying the user that they have entered the correct number and how many tries it took them to guess the right number 
+            print(f"Correct.   Well done! \nIt took you {x+1} tries to guess the right number")
+        #controlling grammar correctness by comparing number of tries to one(in this case it took the user one try to guess the right number)
+        else :
+            #notifying the user that they have entered the correct number and how many tries it took them to guess the right number
+            print(f"Correct.   Well done! \nIt took you {x+1} try to guess the right number")
+        #using break to exit the loop 
+        break
+# else the user is out of guesses
+else :
+    # prompt the user that they have lost and what the number was 
+    print(f"Sorry. No more guesses are allowed. \nThe secret number was {secretNumber}. \n")
