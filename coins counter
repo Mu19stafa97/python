@@ -1,0 +1,37 @@
+'''
+Filename:coinCounter_musta_0.2.py
+Author: Mustafa Al-Tameemi
+purpose:accepts an input the represents a string of characters, representing coins and then works on counting the amount of coins entered each with its value and the total of the coins entered  
+Revision_0: identified the variables and built the main functionality of the program 
+Revision_0.1:first attempt to print out the exact output
+Revision_0.2:second attempt to print out the exact output 
+'''
+#for the next 7 lines only identifying variables and assigning values
+accepter = []
+pennies = [0.01, 0, 0]
+nickels = [0.05, 0, 0]
+dimes = [0.10, 0, 0]
+quarters = [0.25, 0, 0]
+half_dollars = [0.50, 0, 0]
+total = 0
+#getting the user's response
+accepter = input("Enter coin string: ")
+#iterate through the entered string of characters 
+for x in accepter:
+    if x == "p":
+        pennies[1] +=1
+        pennies[2] = pennies[1] * pennies [0]
+    elif x == "n":
+        nickels[1] += 1
+        nickels[2] = nickels[1] * nickels[0]
+    elif x == "d":
+        dimes[1] += 1
+        dimes[2] = dimes[1] * dimes[0]
+    elif x == "q":
+        quarters[1] += 1
+        quarters[2] = quarters[1] * quarters[0]
+    elif x == "h":
+        half_dollars[1] += 1
+        half_dollars[2] = half_dollars[1] * half_dollars[0]
+total = pennies[2] + nickels[2] + dimes[2] + quarters[2] + half_dollars[2]
+print(f"{'='*50} \n {'coin Counter Report' : ^50} \n{'='*50} \n{'Coin':<15}{'Value' :>19}{'Number' :>8}{'Amount' :>8} \n{'='*4 : <15}{'='*5 :>19}{'='*6 :>8}{'='*6 :>8} \n{'Pennies' : <29}{'$' :>1}{pennies[0] :<4}{pennies[1] :>8}{'$' :>3}{pennies[2] :>5} \n{'Nickels' : <29}{'$' :>1}{nickels[0] :<4}{nickels[1] :>8}{'$' :>3}{nickels[2] :>5} \n{'Dimes' : <29}{'$' :>1}{dimes[0] :<4}{dimes[1] :>8}{'$' :>3}{dimes[2] :>5} \n{'Quarters' : <29}{'$' :>1}{quarters[0] :<4}{quarters[1] :>8}{'$' :>3}{quarters[2] :>5} \n{'Half-dollars' : <29}{'$' :>1}{half_dollars[0] :<4}{half_dollars[1] :>8}{'$' :>3}{half_dollars[2] :>5} \n{'Total amount:' : >42}{'$' :>3}{total :>5} ")
